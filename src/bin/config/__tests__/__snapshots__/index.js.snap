@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`configMiddleware getSpaEnvVars works 1`] = `
+Object {
+  "LOGSTASH_HOST": "logstash.rullion.co.uk",
+  "LOGSTASH_MODE": "logstash",
+}
+`;

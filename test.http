@@ -1,0 +1,6 @@
+# example request use with Rest Client extension in vscode
+
+GET http://localhost:9000/config
+Accept: application/json
+
+###
