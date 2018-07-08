@@ -4,7 +4,7 @@
   "description": "Simple SPA Server build with Koa JS",
   "repository": {
     "type": "git",
-    "url": "ssh://git@rulsoft:11022/rulsoft/spa-server.git"
+    "url": "https://github.com/Colour-Full/koa-server.git"
   },
   "main": "lib/index.js",
   "module": "es/index.js",

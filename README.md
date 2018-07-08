@@ -24,7 +24,7 @@ Add the following to your `package.json`
 }
 ```
 
-and `yarn run start` will start the SPA server with the default behaviour (see below for how to customise).
+and `yarn run start` will start the SPA server with the default behavior (see below for how to customize).
 
 
 ## Changing port
@@ -74,7 +74,7 @@ $ HTML=./mycustom.html yarn run start
 
 ## Hotmodule reloading
 
-By default webpack hot module reloading is disabled, but for local development you can enable it by setting the `HOT_MODULES` environment varialbe:
+By default webpack hot module reloading is disabled, but for local development you can enable it by setting the `HOT_MODULES` environment variable:
 
 ```sh
 $ HOT_MODULES=true yarn run start
@@ -88,7 +88,7 @@ $ WEBPACK_CONFIG_FILE=./config/webpack.config.dev.js yarn run start
 
 ## Custom server
 
-If you need more than the out-of-the-box behaviour, you can include the SPA server middleware in your own koajs server for example:
+If you need more than the out-of-the-box behavior, you can include the SPA server middleware in your own koajs server for example:
 
 
 ```js
