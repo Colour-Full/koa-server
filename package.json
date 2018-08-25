@@ -1,6 +1,6 @@
 {
   "name": "spa-server",
-  "version": "1.18.0",
+  "version": "1.19.0",
   "description": "Simple SPA Server build with Koa JS",
   "repository": {
     "type": "git",
@@ -63,6 +63,6 @@
     "webpack": "^4.1.1"
   },
   "peerDependencies": {
-      "koa": "2.x"
+    "koa": "2.x"
   }
 }
