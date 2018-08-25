@@ -61,5 +61,8 @@
     "jest": "^22.4.3",
     "rimraf": "^2.6.2",
     "webpack": "^4.1.1"
+  },
+  "peerDependencies": {
+      "koa": "2.x"
   }
 }
