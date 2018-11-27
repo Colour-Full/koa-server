@@ -7,6 +7,7 @@ import staticFileMiddleware from 'koa-static'
 import path from 'path'
 
 import appHtmlMiddleware from './appHtmlMiddleware'
+import appSSRMiddleware from './appSSRMiddleware'
 import config from './config'
 
 const defaultOptions = {
@@ -14,7 +15,8 @@ const defaultOptions = {
   enableWebpackMiddleware: 'false',
   publicPath: '/',
   staticFolder: './dist/public',
-  webpackConfigFile: './webpack.dev.js'
+  webpackConfigFile: './webpack.dev.js',
+  ssr: false
 }
 
 export const App = (opts) => {
@@ -36,13 +38,18 @@ export const App = (opts) => {
 
   if (options.enableWebpackMiddleware === 'true') {
     const webpackHmrMiddleware = require('koa-webpack')
-
     app.use(webpackHmrMiddleware({
       config: require(path.resolve(options.webpackConfigFile))
     }))
   }
 
-  app.use(appHtmlMiddleware(path.resolve(options.staticFolder, options.appHtmlFile)))
+  if (!options.ssr) {
+    app.use(appHtmlMiddleware(path.resolve(options.staticFolder, options.appHtmlFile)))
+  }
+
+  if (options.ssr === 'true') {
+    app.use(appSSRMiddleware())
+  }
 
   return app
 }
