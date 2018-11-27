@@ -1,10 +1,7 @@
 import { getSpaEnvVars } from '..'
 
-
 describe('configMiddleware', () => {
-
   describe('getSpaEnvVars', () => {
-
     const env = {
       PORT: '9001',
       LOGSTASH_MODE: 'console',
@@ -17,7 +14,5 @@ describe('configMiddleware', () => {
       expect(result).toBeTruthy()
       expect(result).toMatchSnapshot()
     })
-  
   })
-
 })

@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 import assert from 'assert'
 import { isString } from 'lodash'
+import Logger, { ctxSerializer } from 'node-server-logger'
 
 import App from './app.js'
 
+const logger = new Logger('spa-server', 'console', 'info', { serializers: { ctx: ctxSerializer } })
 const port = process.env.PORT || '9000'
 assert(isString(port), 'Invalid port')
 
@@ -17,5 +19,4 @@ const app = App({
 
 app.listen(port)
 
-// TODO : this should use the rulsoft-server-logger
-console.log('Your SPA is now running on port ' + port)
+logger.info('Your SPA is now running on port ' + port)
