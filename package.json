@@ -1,6 +1,6 @@
 {
   "name": "spa-server",
-  "version": "1.19.0",
+  "version": "1.20.0",
   "description": "Simple SPA Server build with Koa JS",
   "repository": {
     "type": "git",
@@ -38,7 +38,8 @@
     "koa-router": "^7.4.0",
     "koa-static": "^4.0.2",
     "koa-webpack": "^3.0.2",
-    "lodash": "^4.17.5"
+    "lodash": "^4.17.5",
+    "node-server-logger": "https://github.com/Colour-Full/node-server-logger.git"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
