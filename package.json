@@ -1,6 +1,6 @@
 {
   "name": "spa-server",
-  "version": "1.19.0",
+  "version": "1.20.0",
   "description": "Simple SPA Server build with Koa JS",
   "repository": {
     "type": "git",
