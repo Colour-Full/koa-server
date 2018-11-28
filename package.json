@@ -21,6 +21,7 @@
     "make": "babel ./src --out-dir ./lib --ignore __tests__",
     "test": "jest __tests__",
     "start": "SPA_FOR_CLIENT=something PUBLIC_DIR='./mock-consumer-project/dist/public' babel-node src/bin/server",
+    "start:ssr": "SSR=true HTML='./mock-consumer-project/ssr' SPA_FOR_CLIENT=something babel-node src/bin/server",
     "preversion": "yarn test",
     "version": "yarn run make && git add -A lib",
     "postversion": "git push && git push --tags"
