@@ -96,26 +96,27 @@ If you need more than the out-of-the-box behavior, you can include the SPA serve
 import koa from 'koa'
 import webpackConfig from './mywebapck.config.js'
 import {
-    routerMiddleware,
-    staticMiddleware,
+    Router,
+    serve,
     // Some additional setting for the static middleware
-    staticRoot,
-    staticOpts,
-    hotModuleMiddleware
+    root,
+    opts,
+    webpackHmrMiddleware
 } from 'spa-server'
 
 const port = process.env.PORT || 3001
 const publicDir = './dist/www'
 
 const app = new Koa()
+const router = new Router()
 
-app.use(routerMiddleware.routes())
-app.use(staticMiddleware(publicDir))
+app.use(router.routes())
+app.use(serve(publicDir))
 
 const hotModules = process.env.HOT_MODULES || false
 
 if (hotModules) {
-    app.use(hotModuleMiddleware({
+    app.use(webpackHmrMiddleware({
         config = webpackConfig
     }))
 }
