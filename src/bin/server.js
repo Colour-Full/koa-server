@@ -5,8 +5,9 @@ import Logger, { ctxSerializer } from 'node-server-logger'
 
 import App from './app.js'
 
-const logger = new Logger('spa-server', 'console', 'info', { serializers: { ctx: ctxSerializer } })
 const port = process.env.PORT || '9000'
+const appName = process.env.APP_NAME || 'spa-server'
+const logger = new Logger(appName, 'console', 'info', { serializers: { ctx: ctxSerializer } })
 assert(isString(port), 'Invalid port')
 
 const app = App({

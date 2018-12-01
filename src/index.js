@@ -1,14 +1,17 @@
 import Router from 'koa-router'
 import serve, {root, opts} from 'koa-static'
-import webpackHmrMidleware from 'koa-webpack'
+import webpackHmrMiddleware from 'koa-webpack'
 import App from './bin/app'
-
-export const routerMiddleware = Router
-export const staticMiddleware = serve
-export const staticRoot = root
-export const staticOpts = opts
-export const hotModuleMiddleware = webpackHmrMidleware
+import Logger from 'node-server-logger'
+import compressMiddleware from 'koa-compress'
 
 export {
-  App
+  App,
+  Router,
+  serve,
+  root,
+  opts,
+  webpackHmrMiddleware,
+  Logger,
+  compressMiddleware
 }
